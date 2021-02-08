@@ -1,0 +1,1 @@
+web: gunicorn covidindia.wsgi --log-file
