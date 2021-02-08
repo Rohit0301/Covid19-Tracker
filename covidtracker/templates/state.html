@@ -1,0 +1,43 @@
+{%extends 'base.html'%}
+{% block body %}
+<div class="container">
+<h1>India : {{date}}</h1>
+<table class="table table-borderless" style="text-align:center">
+    <tr>
+        <th scope="col" style="color:red">Confirmed<br>
+      <span>{{ind.total.confirmed}}<br>+({{ind.daily.confirmed}})</span></th>
+      <th scope="col" style="color:green">Recovered<br>
+      <span >{{ind.total.recovered}}<br>+({{ind.daily.recovered}})</span></th>
+        <th scope="col" style="color:grey">Deceased<br>
+      <span >{{ind.total.deceased}}<br>+({{ind.daily.deceased}})</span></th>
+        <th scope="col" style="color:blue">Tested<br>
+      <span >{{ind.total.tested}}<br>+({{ind.daily.tested}})</span></th>
+    </tr>
+</table>
+<h2>State Wise cases in India </h2>
+<table class="table my-3 table-borderless " style="text-align:center" >
+    <thead class="thead-light">
+
+
+    <tr>
+        <th>State</th>
+        <th >Total Confirmed Cases</th>
+        <th>Total Recovered Case</th>
+        <th>Total Deaths</th>
+        <th>Total Tested</th>
+    </tr>
+    </thead>
+
+    {% for d1 in ss %}
+    <tr>
+        <th>{{d1.state}}</th>
+        <td class="table-danger">{{d1.total.confirmed}}<br> + ({{d1.daily.confirmed}})</td>
+        <td class="table-success">{{d1.total.recovered}}<br> + ({{d1.daily.recovered}})</td>
+        <td class="table-secondary">{{d1.total.deceased}}<br>+ ({{d1.daily.deceased}})</td>
+        <td class="table-info">{{d1.total.tested}}<br>+ ({{d1.daily.tested}})</td>
+    </tr>
+    {% endfor %}
+
+
+</table></div>
+{% endblock body%}
