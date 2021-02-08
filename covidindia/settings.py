@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-
+import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'rtshvbc40i%n0m4$-*74_9t-3+r+obam0s6lm6d4g&)(c00hgw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'covidindia.urls'
 
@@ -122,3 +123,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
