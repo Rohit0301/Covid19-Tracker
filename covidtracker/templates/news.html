@@ -1,0 +1,43 @@
+{%extends 'base.html'%}
+{% block body%}
+<style>
+@media(max-width:425px){
+    .cent{
+        font-size:2rem;
+        align-items:center;
+    }
+    .he{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+}
+</style>
+
+<center style="margin-top: 50px;font-weight: 200;color: grey;" ><h1 class="cent">LATEST NEWS UPDATE</h1>
+</center>
+<br>
+<div class="container-fluid" class="div">
+    <div class="row">
+            {% for i in news%}
+            <div class="col-sm-12" style="margin-bottom: 50px; background-color: #FAEBD7" >
+                <div class="row">
+
+                        <div class="col-sm-2">
+                            <img class="img-fluid he" src="{{i.image_link}}" alt="newsimage" width="150px" style="border-radius: 20px 20px 20px 20px;">
+                        </div>
+
+                        <div class="col-sm-9">
+                            <br>
+                            <p class="card-text he"><b>{{i.Headline}}...</b></p>
+                            <p><a href="{{i.headline_link}}" class="btn btn-primary he">More Detail>></a></p>
+                        </div>
+
+                </div>
+            </div>
+            {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}

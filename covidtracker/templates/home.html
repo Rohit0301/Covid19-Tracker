@@ -5,7 +5,7 @@
     height:300px;
     overflow:auto;
     margin-top:20px;
-   background-color:#ccffee;
+   background-color:#FFFACD;
   }
   #table-scroll1{
     height:800px;
@@ -13,12 +13,12 @@
     margin-top:20px;
   }
 </style>
-<div class="container" style="margin-top:50px;" id="nation">
+<div class="container-fluid" style="margin-top:50px;" id="nation">
     <div class="row">
        <div class="col">
 
             <h1 style="margin-bottom:0;font-weight:bold;">
-                <center>District-Wise Data For India </center></h1>
+                <center style="color: grey">District-Wise Data For India </center></h1>
             <div id="table-wrapper">
                 <div id="table-scroll1">
                     <table class="table table-hover table-primary" id="india">
@@ -31,7 +31,7 @@
                                 <td>
                                 {% for dt in data1 %}
                                 <hr>
-                                <center><h1>{{dt.state}}</h1></center>
+                                <center><h1 class="text-info">{{dt.state}}</h1></center>
                                 <hr>
                                 <div id="table-wrapper">
                                     <div id="table-scroll">
@@ -48,16 +48,21 @@
                                             <tbody>
                                             {% for dt in dt.districtData %}
                                             <tr style="text-align:center">
+                                               <td> {{dt.district}}</td>
 
-                                                <td> {{dt.district}}</td>
-
-                                                <td > {{dt.confirmed}} <span > [+{{dt.delta.confirmed}}]</span></td>
+                                                <td > {{dt.confirmed}}
+                                                    <span class="deltaconfirmed badge badge-light">
+                                                    <span class="text-primary text-bold">
+                                                   [+{{dt.delta.confirmed}}]</span></span></td>
                                                 <td class='activ'> {{dt.active}}</td>
 
-                                                <td class='activ'> {{dt.recovered}} <span >[-{{dt.delta.recovered}}]<span></td>
+                                                <td class='activ'> {{dt.recovered}}   <span class="deltaconfirmed badge badge-light">
+                                                    <span class="text-success text-bold">
+                                                   [-{{dt.delta.recovered}}]</span></span></td>
 
-                                                <td > {{dt.deceased}} <span >[+{{dt.delta.deceased}}]</span></td>
-
+                                                <td > {{dt.deceased}}   <span class="deltaconfirmed badge badge-light">
+                                                    <span class="text-danger text-bold">
+                                                   [+{{dt.delta.deceased}}]</span></span></td>
                                             </tr>
                                             {% endfor %}
                                             </tbody>
@@ -77,3 +82,4 @@
 </div>
 
 {% endblock body%}
+

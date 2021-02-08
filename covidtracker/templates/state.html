@@ -1,20 +1,43 @@
 {%extends 'base.html'%}
 {% block body %}
-<div class="container">
-<h1>India : {{date}}</h1>
-<table class="table table-borderless" style="text-align:center">
-    <tr>
-        <th scope="col" style="color:red">Confirmed<br>
-      <span>{{ind.total.confirmed}}<br>+({{ind.daily.confirmed}})</span></th>
-      <th scope="col" style="color:green">Recovered<br>
-      <span >{{ind.total.recovered}}<br>+({{ind.daily.recovered}})</span></th>
-        <th scope="col" style="color:grey">Deceased<br>
-      <span >{{ind.total.deceased}}<br>+({{ind.daily.deceased}})</span></th>
-        <th scope="col" style="color:blue">Tested<br>
-      <span >{{ind.total.tested}}<br>+({{ind.daily.tested}})</span></th>
-    </tr>
-</table>
-<h2>State Wise cases in India </h2>
+<div class="container-fluid">
+    <br>
+<h1 style="color:grey">India : {{date}}</h1>
+<br>
+<div class="container-fluid">
+        <div class="row">
+            <div class="card col-md-3 col-12 mb-2 shadow color1">
+                <div class="card-body">
+                    <h4 class="card-title">Confirmed</h4>
+                    <p class="card-text number">{{ind.total.confirmed}}<br><span class="text-dark " style="font-weight: 500">[+{{ind.daily.confirmed}}]</span></p>
+                </div>
+            </div>
+            <div class="card col-md-3 col-12 mb-2 shadow color2">
+                <div class="card-body ">
+                    <h4 class="card-title">Recovered</h4>
+                    <p class="card-text number">{{ind.total.recovered}}<br><span class="text-dark " style="font-weight: 500">[+{{ind.daily.recovered}}]</span></p>
+                </div>
+            </div>
+            <div class="card col-md-3 col-12 mb-2 shadow color3">
+                <div class="card-body">
+                    <h4 class="card-title">Deceased</h4>
+                    <p class="card-text number">{{ind.total.deceased}}<br><span class="text-dark " style="font-weight: 500">[+{{ind.daily.deceased}}]</span></p>
+                </div>
+            </div>
+            <div class="card col-md-3 col-12 mb-2  shadow color4">
+                <div class="card-body">
+                    <h4 class="card-title">Tested</h4>
+                    <p class="card-text number">{{ind.total.tested}}<br><span class="text-dark " style="font-weight: 500"> [+{{ind.daily.tested}}]</span></p>
+                </div>
+            </div>
+           
+
+        </div>
+
+        <br>
+        <br>
+
+<h2 style="color:grey">State Wise cases in India </h2>
 <table class="table my-3 table-borderless " style="text-align:center" >
     <thead class="thead-light">
 
@@ -31,10 +54,27 @@
     {% for d1 in ss %}
     <tr>
         <th>{{d1.state}}</th>
-        <td class="table-danger">{{d1.total.confirmed}}<br> + ({{d1.daily.confirmed}})</td>
-        <td class="table-success">{{d1.total.recovered}}<br> + ({{d1.daily.recovered}})</td>
-        <td class="table-secondary">{{d1.total.deceased}}<br>+ ({{d1.daily.deceased}})</td>
-        <td class="table-info">{{d1.total.tested}}<br>+ ({{d1.daily.tested}})</td>
+        <td >{{d1.total.confirmed}}<br>
+        <span class="deltaconfirmed badge badge-light">
+                        <span class="text-primary text-bold">
+                             [+{{d1.daily.confirmed}}]
+                        </span>
+                    </span></td>
+        <td>{{d1.total.recovered}}<br> <span class="deltaconfirmed badge badge-light">
+                        <span class="text-warning text-bold">
+                             [+{{d1.daily.recovered}}]
+                        </span>
+                    </span></td>
+        <td>{{d1.total.deceased}}<br><span class="deltaconfirmed badge badge-light">
+                        <span class="text-danger text-bold">
+                             [+{{d1.daily.deceased}}]
+                        </span>
+                    </span></td>
+        <td >{{d1.total.tested}}<br><span class="deltaconfirmed badge badge-light">
+                        <span class="text-success text-bold">
+                             [+{{d1.daily.tested}}]
+                        </span>
+                    </span></td>
     </tr>
     {% endfor %}
 

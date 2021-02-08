@@ -9,10 +9,62 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <title>Hello, world!</title>
+    <style>
+        .display-8 {
+            font-weight: 300;
+            font-size: 35px;
+        }
+
+        .color1 {
+            background-color: #2475B0;
+            color: white;
+        }
+
+        .color2 {
+            background-color: gold;
+            color: white;
+        }
+
+        .color3 {
+            background-color: tomato;
+            color: white;
+        }
+
+        .color4 {
+            background-color: limegreen;
+            color: white;
+        }
+
+        .color5 {
+            background-color: orange;
+            color: white;
+        }
+        .color6{
+            background-color: #26ae60;
+            color: white;
+        }
+        .color7 {
+            background-color: midnightblue;
+            color: white;
+        }
+        .color8 {
+            background-color: salmon;
+            color: white;
+        }
+       .shadow {
+          box-shadow: 0 .5rem 2rem grey!important;
+      }
+
+        .number {
+            font-weight: 300;
+            font-size: 23px;
+            float: right;
+        }
+    </style>
   </head>
   <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="/covidtracker">Go Corona Go</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+  <a class="navbar-brand" href="/covidtracker"><b>Go Corona Go</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -20,10 +72,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/covidtracker">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/covidtracker"><b>Home</b><span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="/covidtracker/district">District Wise</a>
+        <a class="nav-link" href="/covidtracker/global"><b>Countries stats</b><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/covidtracker/district"><b>District Stats</b></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/covidtracker/news"><b>Latest News</b><span class="sr-only">(current)</span></a>
       </li>
     </ul>
 
